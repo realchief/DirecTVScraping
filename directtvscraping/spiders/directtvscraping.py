@@ -27,14 +27,8 @@ try:
 except Exception as e:
     print('parse_csv Function => Got Error: {}'.format(e))
 
-    with open('/home/ubuntu/Stefan-Scrapy-DiscoveryMarkets/DiscoveryMarketsScraping/DirectTV/directtvscraping'
-              '/inputdata/DirecTV_input.csv', 'r') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            zip_codes.append(row[2])
-
 try:
-    with open(os.path.abspath('DirecTV_input.csv'), 'r') as f:
+    with open(os.path.abspath('Channels.csv'), 'r') as f:
         reader = csv.reader(f)
         for row in reader:
             Channels.append(row[0])
@@ -50,21 +44,6 @@ try:
 
 except Exception as e:
     print('parse_csv Function => Got Error: {}'.format(e))
-
-    with open('/home/ubuntu/Stefan-Scrapy-DiscoveryMarkets/DiscoveryMarketsScraping/DirectTV'
-              '/directtvscraping/inputdata/Channels.csv', 'r') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            Channels.append(row[0])
-            Genere.append(row[1])
-            Ott.append(row[2])
-            Popular.append(row[3])
-            Tags.append(row[4])
-            ShortName.append(row[5])
-            Alternative_Name.append(row[6])
-            Top_Shows.append(row[7])
-            Channel_Description.append(row[8])
-            Conversion_Names.append(row[9])
 
 
 class SiteProductItem(scrapy.Item):
